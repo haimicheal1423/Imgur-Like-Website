@@ -1,0 +1,86 @@
+*{
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 400
+
+}
+
+body{
+    /* padding: 50px 0; */
+    padding: 0 0;
+    background-color: rgb(0, 27, 72);
+    margin: auto;
+    background: url(https://www.teahub.io/photos/full/288-2886307_sunset-gif.gif) no-repeat top center fixed;
+    background-size: cover; 
+}
+
+
+
+#home-container{
+    display: grid;
+    justify-content: center;
+    margin: 20px auto auto auto;
+    grid-template-rows: repeat(2, 295px);
+    grid-template-columns: repeat(4, 200px);
+    grid-auto-rows: 275px;
+    grid-auto-columns: 204px;
+    gap: 1.5em;
+    width: 100%;
+
+}
+
+.card{
+    display: grid;
+    margin: 0.2rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+    "photo"
+    "title";
+}
+
+img{
+    grid-area: photo;
+    height: 200px;
+    width: 200px;
+    border-radius: 8px 8px 0 0;
+}
+
+h5{
+    grid-area: title;
+    margin: 0 0 0 0;
+    border-style:double;
+    background-color:rgb(3, 3, 117);
+    border-radius: 0 0 8px 8px;
+    
+}
+
+.card-title{
+    margin-top: 0.5em;
+    margin-bottom: -0.7em;
+}
+
+.card-title, .card-text{
+    color:white;
+}
+
+.card-text{
+    font-size:x-small;
+}
+
+.anchor-buttons{
+    padding: 4px;
+    border-style:groove;
+    border-radius: 8px;
+    text-decoration: none;
+    color:white;
+    background-color: rgb(6, 10, 70);
+}
+
+.anchor-buttons:hover{
+    background-color: rgb(105, 113, 223);
+
+}
+
+
+

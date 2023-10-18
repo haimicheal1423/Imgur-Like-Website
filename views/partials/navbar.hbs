@@ -1,0 +1,20 @@
+    </div>
+    <nav class = "nav-bar" id = "nav-bar">
+        <div id = "logo" class = "nav-buttons">
+            <i class="fas fa-igloo"></i>
+            <a href="/" class = "home-button"><b>Home</b></a>
+        </div>
+        <a href = "/postimage" class = "nav-buttons" id = "post-button"><i class="fas fa-plus-circle"></i>New Post</a>
+        <input id = "search" type = "search">
+        <div id = "search-button">
+            <i class="fas fa-search"></i>
+        </div>
+        {{#if logged}}
+        <a class = "nav-buttons" id = "logout">
+            Log Out
+            <i class="fas fa-sign-out-alt"></i>
+            </a>
+        {{else}}
+        <a href = "/login" class = "nav-buttons" id = "signin-button">Sign-in</a>
+        {{/if}}
+    </nav>

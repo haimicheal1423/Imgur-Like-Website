@@ -1,0 +1,100 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/public/css/postviewing.css">
+</head>
+<body>
+<div id = "post-container">
+    <img id = "image-posted" src = "/{{currentPost.photopath}}">
+    <div id = "info-message-grid">
+        <header id = "post-title">
+            <h2 id = "title-text">{{currentPost.title}}</h2>
+        </header>
+        <div id = "author" class = "info">{{currentPost.username}}</div>
+        <div id = "post-id" class = "info">{{currentPost.created}}</div>
+        <div id = "post-desc" class = "info">{{currentPost.description}}</div>
+    </div>
+    <div id = "messages">
+        <div id = "message-list">
+            {{#each currentPost.comments}}
+            {{> comment this}}
+            {{/each}}
+        </div>
+        <div id = "comment-box">
+            <textarea id = "comment-textarea"></textarea>
+            <i id = "comment-button" class="far fa-comment"></i>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('span[class=date-posted]').forEach((postedDate) => {
+            postedDate.textContent = new Date(postedDate.textContent).toLocaleString();
+        });
+    });
+
+    function addMessage(data){
+        let template = document.createElement('template');
+        template.innerHTML = 
+        `<div id = "message-${data.commentId}">
+                <strong class = "author-text">@${data.username}</strong>
+                <span class = "date-posted">${new Date().toLocaleString()}</span>
+                <div class = "comment-text">${data.comment}</div>
+            </div>`;
+            document.getElementById("message-list").firstChild.before(template.content.firstChild);
+    }
+
+    document.getElementById('comment-button').onclick = (event) => {
+        let commentText = document.getElementById('comment-textarea').value;
+        let postId =  document.location.pathname.match(/\d+/g).map(Number)[0];
+
+        if(!commentText){
+            return;
+        }
+
+        let fetchOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type":"Application/json"
+            },
+            body:JSON.stringify({
+                comment: commentText,
+                postId, postId
+            })
+        }
+            fetch('/comments/create', fetchOptions)
+            .then((response) => response.json())
+            .then((data) => {
+               if(data.code == 1){
+                   addMessage(data);
+               }
+               else{
+                   addFlashfromFrontEnd(data.message, data.status);
+               }
+            })
+            .catch(err => console.log(err));
+    }   
+
+</script>
+{{!-- <body>
+    <div class = "grid-container">
+        <header>
+            <h2>View Post</h2>
+        </header>
+
+        <fieldset id = "view">
+            <p><b>Post Title: </b> Bed head</p>
+
+            <p><b>Post Author: </b> Mashiro Shiina</p>
+
+            <p><b>Time Created: </b><i>September 24 2021 4:14:42 pm</i></p>
+
+            <img src = "https://media1.giphy.com/media/GmL64q8ZivyJa/200.gif" alt = "Image not Available">
+
+        </fieldset>
+
+</div>
+    
+
+</body>
+</html> --}}

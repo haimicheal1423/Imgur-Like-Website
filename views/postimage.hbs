@@ -1,0 +1,33 @@
+<body>
+
+    <div class = "grid-container" id = "make-post">
+        <header>
+            <h2>Post an Image</h2>
+        </header>
+
+        <form method = "POST" enctype="multipart/form-data"
+        action = '/posts/createPost'>
+            <fieldset id = "create-post">
+                <h3>Create The Post!</h3>
+                <p id = "create-post">Post Title: <input type = "text" name = "title" required> </p>
+
+                <div id = "create-post">Post Description:</div>
+                {{!-- <textarea rows="5" cols="50" name = "description" required></textarea> --}}
+                <input id = "post-description" name = "description" type = "text" required>
+
+                <div id = "create-post">Upload your Image: <input type = "file" name = "uploadImg" required> </p>
+
+               
+                <p id = "AOP"> <input type = "checkbox" required>I accept the 
+                    <a href="#">Acceptable Use Policy</a> for uploading images</p>
+                <br/><br/>
+
+                <button type ="submit" id = "post-button">Post</button>
+                <button type = "reset" id = "reset">Clear</button>
+            </fieldset>
+        </form>
+    </div>
+
+
+</body>
+</html>

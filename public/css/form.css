@@ -1,0 +1,193 @@
+*{
+    text-align: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 400
+
+}
+body{
+    padding: 0 0;
+    margin: auto;
+    background-color: rgb(0, 27, 72);
+    background: url(https://www.teahub.io/photos/full/288-2886307_sunset-gif.gif) no-repeat top center fixed;
+    background-size: cover; 
+}
+
+.grid-container{
+    display: grid;
+    margin: 20px auto auto auto;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    "header header header header header"
+    "lside content content content rside"
+    "lside content content content rside"
+    "lside content content content rside"
+    "foot foot foot foot foot";
+
+}
+
+header{
+    grid-area: header;
+}
+
+#flash_mssg{
+    color: rgb(54, 247, 128);
+    position: fixed;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,270%);
+    z-index: 9999;
+}
+
+#flash_mssg div{
+    text-align: center;
+}
+
+#banner{
+    background-color: rgba(58, 45, 131, 0.5);
+    height: 150px;
+}
+
+.banner_text{
+    color:white;
+    font-size: 38px;
+    padding: 1.25rem 0 0 10em;
+    text-align:left;
+}
+
+#banner_icon{
+    background-size: 50%;
+    width: 85px;
+    height: 80px;
+}
+
+
+form{
+    grid-area: content;
+    margin: auto;
+}
+
+.footer{
+    grid-area: foot;
+}
+
+.footer-contact{
+    text-decoration: none;
+    color:white;
+}
+
+#create-post{
+    text-align: left;  
+}
+
+#make-post{
+    justify-items: center;
+}
+
+@media screen and (max-width: 500px){
+    .grid-container{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "header header header"
+        "lside content content"
+        "lside content content"
+        "rside rside rside";
+    }
+    body{
+        background-color: rgb(0, 27, 72);
+    }
+}
+
+@media screen and (max-width: 350px){
+    .grid-container{
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header "
+        "lside "
+        "content"
+        "rside";
+    }
+    body{
+        background-color: rgb(0, 27, 72);
+    }
+}
+
+
+fieldset{
+    width: 50%;
+    margin: auto;
+    border-radius: 8px;
+    background-color: rgb(241, 221, 195);
+    border-style:hidden;
+    grid-area: content;
+}
+
+#view{
+    height: 25rem
+}
+
+label{
+    display: inline-block;
+    margin: 2px;
+    width: 5rem;
+}
+
+#stay-signed{
+    font-size: smaller;
+}
+
+#age-requirement, #TOS, #stay-signed{
+    display:inline-block;
+    margin: 2px;
+    padding: 2px;
+    width: 20rem;
+}
+
+#AOP{
+    display:inline-block;
+    margin: 2px;
+    padding: 2px;
+    width: 31rem;
+    text-align: left;
+}
+
+
+button{
+    border-radius: 8px;
+    height: 10%;
+    width: 7em;
+    padding: 3px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(218, 200, 178);
+}
+
+input, textarea{
+    border-radius: 4px;
+    text-align: left;
+}
+
+#post-description{
+    height: 25px;
+    
+}
+
+input{
+    height: 23px;
+}
+
+#login-trouble, #no-account, #footer{
+    padding: 2px;
+    font-size:xx-small;
+}
+
+/* #submit, #reset, #signin-button, #post-button{
+    cursor: pointer;
+} */
+

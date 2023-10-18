@@ -1,0 +1,38 @@
+
+<body>
+    </div>
+    <div class = "grid-container">
+
+        <header>
+            <h1>Login Form</h1>
+        </header>
+
+
+    <form method = "POST" action = "/users/login" enctype="application/x-www-form-urlencoded">
+        <fieldset>
+            <h3>
+                Sign-in
+            </h3>
+   
+            <label>Username:</label>
+            <input type = "text" name = "username" required>
+            <br /><br />
+
+            <label>Password:</label>
+            <input type = "password" name = "password" required>
+            <p id = "stay-signed"><input type = "checkbox">Stay Signed In</p>
+            <br /><br />
+            <button type = "submit" id = "signin-button">Sign-in</button>
+            <br/>
+
+            <a href="#" id = "login-trouble">Trouble Logging in?</a>
+            <br/>
+            <a href="/regristration" id = "no-account">Don't have an account? Create an account!</a>
+
+        </fieldset>
+
+    </form>
+    </div>
+    
+</body>
+</html>

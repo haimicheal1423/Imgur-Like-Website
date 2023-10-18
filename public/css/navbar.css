@@ -1,0 +1,62 @@
+*{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: 400;
+}
+.nav-bar{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 5px ;
+    border-style: groove;
+    background-color: rgb(76, 60, 112);
+    border-color:black ;
+}
+
+#signin-button, #search, #searchbutton, #logout{
+    margin-left: auto;
+}
+
+#search{
+    width:70%;
+    padding: 5px;
+    text-align: left;
+    border-radius: 2px;
+    height: 50%;
+}
+
+#search-button{
+    background-color: rgb(241, 221, 195);
+    border-style: groove;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#search-button:hover{
+    background-color: rgb(223, 170, 97);
+}
+
+.nav-buttons{
+    border-style: groove;
+    background-color: rgb(121, 203, 206);
+    padding: 10px 10px;
+    border-radius: 4px;
+    color: black;
+    border-color: black;
+}
+
+.home-button{
+    color:black;
+}
+
+.nav-buttons:hover{
+    background-color: cadetblue;
+}
+
+#logout{
+    border-color: black;
+    cursor: pointer;
+}
+
+#post-button{
+    margin-left: auto;
+}

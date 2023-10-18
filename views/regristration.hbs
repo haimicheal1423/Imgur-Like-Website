@@ -1,0 +1,53 @@
+<head>
+    <script defer type="text/javascript" src="/public/js/FormValidation.js"></script>
+</head>
+<body>
+
+    <div class = "grid-container">
+        <header>
+            <h1>Sign-Up Form</h1>    
+        </header>
+
+
+        <form id = "register" onsubmit = "event.preventDefault(); formCheck();" method = "POST" 
+        action = "/users/register" enctype="application/x-www-form-urlencoded">
+
+            <fieldset>
+                <h3>Create an Account!</h3>
+                <p>Fill in information to register</p>
+                <label>Username:</label>
+                <input id = "username"  type = "text" name = "username" required>
+                <br /><br />
+            
+                <label>E-mail:</label>
+                <input type = "email" name = "email" required>
+                <br /><br />
+
+                <label>Password:</label>
+                <input id = "password" type = "password" name = "password" required>
+                <br/><br/>
+
+                <label>Confirm Password:</label>
+                <input id = "confirm-password" type = "password" name = "cpassword" required>
+                <br/>
+                
+                
+                <p id = "age-requirement"><input type = "checkbox" required>I Accept that I am 13+ of age</p>
+                <br/>
+                
+                <p id = "TOS"><input type = "checkbox" required>I Accept the <a href="#">TOS and Privacy Rules</a></p>
+                
+                <p></p>
+                <button type = "submit">Sign-up</button>
+            <button type = "reset">Clear</button>
+            </fieldset>
+            
+            
+            
+        </form>
+        
+    </div>
+    
+
+</body>
+</html>
